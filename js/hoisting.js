@@ -84,3 +84,24 @@ function greet() {
 }
 
 greet() // overwrited function result greet02 
+
+////////////////////////////////////////////////
+
+
+food();
+
+var food = function () {
+    console.log("Hello");
+};
+
+food();
+
+function food() {
+    console.log("Hello2");
+};
+
+food();
+
+// Hello2
+// Hello
+// Hello

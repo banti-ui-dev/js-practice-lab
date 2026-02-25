@@ -120,3 +120,44 @@ const filteredData = users.filter(item => (
     item.active === true && item.age >= 18
 ))
 console.log(filteredData);
+
+// sort array
+const arrB = [5, 3, 7, 5, 9, 4, 1, 2, 5, 8, 49, 6]
+const sortarr = (arrB) => {
+    let unique = [];
+    for (let i = 0; i <= arrB.length - 1; i++) {
+        if (!unique.includes(arrB[i])) {
+            unique.push(arrB[i])
+        }
+    }
+    return unique.sort()
+}
+console.log(sortarr(arrB));
+
+
+
+// p3
+let x;
+if (x = false === true) {
+    console.log(x);
+} else {
+    console.log('Not x');
+}
+// result : Not x
+
+//
+for (let i = 0; i < 5; i++) {
+    setTimeout(() => {
+        console.log(i);
+    }, 0);
+}
+// Result 0 1 2 3 4
+for (var i = 0; i < 5; i++) {
+    setTimeout(() => {
+        console.log(i);
+    }, 0);
+}
+// Result 5 5 5 5 5
+
+console.log(5 > 3 > 1);
+//Result Error

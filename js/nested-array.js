@@ -16,12 +16,21 @@ console.log(arr.flat(Infinity));
 const flatern = (str) => {
     let result = []
     for (let i = 0; i < str.length; i++) {
-        if (Array.isArray(str[i])) {
-            result = result.concat(flatern(str[i]))
-        } else {
-            result.push(str[i])
-        }
+        // if (Array.isArray(str[i])) {
+        //     result = result.concat(flatern(str[i]))
+        // } else {
+        //     result.push(str[i])
+        // }
+        Array.isArray(str[i]) ? result = result.concat(flatern(str[i])) : result.push(str[i])
     }
     return result
 }
 console.log(flatern(arr));
+
+
+//
+let arrN = [1,[2,3],4]
+let result = arrN.flatMap((item) => (
+    Array.isArray(item) ? item.map(itemNew => itemNew*2) : item*2
+))
+console.log(result);
