@@ -98,13 +98,25 @@ console.log(newNum(num));
 //Find First Non-Repeating Character - programming
 const firstNonrep = (str) => {
     let repeted = ""
-    for (let i = 0; i <= str.length; i++){
-       let char = str[i]
-       if(!repeted[char]){
-        return char
-       }
-    }    
+    for (let i = 0; i <= str.length; i++) {
+        let char = str[i]
+        if (!repeted[char]) {
+            return char
+        }
+    }
 }
 console.log(firstNonrep("programming"));
 
-
+// filter object
+const users = [
+    { name: "Amit", age: 17, active: true },
+    { name: "Riya", age: 22, active: false },
+    { name: "Karan", age: 19, active: true },
+    { name: "Neha", age: 16, active: true },
+    { name: "Vikas", age: 25, active: true }
+];
+//use filter method to get 18 and 18 plus array
+const filteredData = users.filter(item => (
+    item.active === true && item.age >= 18
+))
+console.log(filteredData);
