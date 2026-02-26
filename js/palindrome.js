@@ -71,16 +71,16 @@ const isPalindrome = (data) => {
 console.log(isPalindrome(101))
 
 //Check the Palindrome 
-const greeting = "Hello asa Good Morning"
-const palindromeText = (abc) => {
-    const newGreeting = abc.toLowerCase().split(" ")    
-   newGreeting.forEach((element) => {
-    let reversed = element.split("").reverse().join("");
-    if(reversed === element){
-        console.log(element+ " is Palindrome");        
-    }else{
-        console.log(element+ " is not Palindrome");        
-    }
-   });
+const greeting = ["Hello", "asa", "Good", "Morning"]
+const palindromeText = (greeting) => {
+    let reverse = greeting.map(item => {
+        let eachword = item.split("").reverse().join("")
+        if(eachword === item){
+            console.log(item,"-",eachword, ": Is Palindrome");            
+        }else{
+            console.log(item,"-",eachword, ": Is Not Palindrome");         
+        }
+    })
 }
+
 console.log(palindromeText(greeting));
