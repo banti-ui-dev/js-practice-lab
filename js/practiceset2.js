@@ -110,17 +110,16 @@ console.log(pair(9, arrF));
 
 
 //Task 10: Single Loop Stats (Hard)
-const arrG = [10, 20, 30, 40, 5, -5]
+const arrG = [10, 20, 30, 40, 5, -5, -2, -7]
 const newObj = (arr) => {
-    let sum = 0;
-    let min = Infinity;
+    let sum = 0
+    let min = Infinity
     let max = -Infinity
     let evenCount = 0
     let oddCount = 0
     let negativeCount = 0
-
     for (let num of arr) {
-        sum += num
+        sum += num;
         if (num > max) max = num
         if (num < min) min = num
         if (num % 2 === 0) evenCount++
@@ -137,16 +136,19 @@ console.log(newObj(arrG));
 
 //Task 11: Flatten Array
 const numArr = [1, [2, 3], [4, [5, 6]]]
-const flaterArr = (arr) => {
-    let flatern = [];
-    for (let i = 0; i < arr.length; i++) {
-        if(Array.isArray(arr[i])){
-            flatern = flatern.concat(flaterArr(arr[i]))
-        }else{
-            flatern.push(arr[i])
+// console.log(numArr.flat(Infinity));
+const flaternArr = (arr) => {
+    let result = [];
+    for (let num of arr) {
+        if (Array.isArray(num)) {
+            result = result.concat(flaternArr(num))
+        } else {
+            result.push(num)
         }
     }
-    return flatern
+    return result
 }
-console.log(flaterArr(numArr));
+console.log(flaternArr(numArr));
+
+
 
