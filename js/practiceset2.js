@@ -95,9 +95,9 @@ console.log(newArr(arrE));
 const arrF = [2, 7, 11, 15]
 const pair = (target, arr) => {
     let pairarr = {};
-    for(let num of arr){
+    for (let num of arr) {
         const needed = target - num;
-        if(pairarr[needed]){
+        if (pairarr[needed]) {
             return [needed, num]
         }
         pairarr[num] = true;
@@ -110,19 +110,43 @@ console.log(pair(9, arrF));
 
 
 //Task 10: Single Loop Stats (Hard)
-// {
-//     sum,
-//         avg,
-//         min,
-//         max,
-//         evenCount,
-//         oddCount,
-//         negativeCount
-// }
+const arrG = [10, 20, 30, 40, 5, -5]
+const newObj = (arr) => {
+    let sum = 0;
+    let min = Infinity;
+    let max = -Infinity
+    let evenCount = 0
+    let oddCount = 0
+    let negativeCount = 0
+
+    for (let num of arr) {
+        sum += num
+        if (num > max) max = num
+        if (num < min) min = num
+        if (num % 2 === 0) evenCount++
+        else oddCount++
+        if (num < 0) negativeCount++
+    }
+    let avg = sum / arr.length
+    return { sum, min, max, evenCount, oddCount, negativeCount, avg }
+}
+console.log(newObj(arrG));
+
+
+
 
 //Task 11: Flatten Array
-// Input:
-// [1, [2, 3], [4, [5, 6]]]
+const numArr = [1, [2, 3], [4, [5, 6]]]
+const flaterArr = (arr) => {
+    let flatern = [];
+    for (let i = 0; i < arr.length; i++) {
+        if(Array.isArray(arr[i])){
+            flatern = flatern.concat(flaterArr(arr[i]))
+        }else{
+            flatern.push(arr[i])
+        }
+    }
+    return flatern
+}
+console.log(flaterArr(numArr));
 
-// Output:
-// [1, 2, 3, 4, 5, 6]
