@@ -70,22 +70,59 @@ const missed = (arrD) => {
         sum += num
     }
 
-    return (sumAll - sum)  
+    return (sumAll - sum)
 }
 console.log("Missing Number", missed(arrD));
 
 //Task 7: Move Zeros to End
-const arrE = [0,1,0,3,12]
+const arrE = [0, 1, 0, 3, 12]
 const newArr = (arr) => {
-    let arrone = []
-    let arrsecond = []
-    for(let num of arr){
-        if(num === 0){arrsecond.push(num)}
-        else{arrone.push(num)}
+    let index = 0;
+    for (let i = 0; i < arr.length; i++) {
+        //use swipe method
+        if (arr[i] !== 0) {
+            [arr[index], arr[i]] = [arr[i], arr[index]]
+            index++
+        }
     }
-    return [...arrone,...arrsecond]
+    return arr
 }
 console.log(newArr(arrE));
 
-//Task 7: Move Zeros to End
-const arrF = [0,1,0,3,12]
+
+//Task 9: Find Pair With Target Sum
+//target = 9 Output: [2,7]
+const arrF = [2, 7, 11, 15]
+const pair = (target, arr) => {
+    let pairarr = {};
+    for(let num of arr){
+        const needed = target - num;
+        if(pairarr[needed]){
+            return [needed, num]
+        }
+        pairarr[num] = true;
+    }
+
+}
+console.log(pair(9, arrF));
+
+
+
+
+//Task 10: Single Loop Stats (Hard)
+// {
+//     sum,
+//         avg,
+//         min,
+//         max,
+//         evenCount,
+//         oddCount,
+//         negativeCount
+// }
+
+//Task 11: Flatten Array
+// Input:
+// [1, [2, 3], [4, [5, 6]]]
+
+// Output:
+// [1, 2, 3, 4, 5, 6]
