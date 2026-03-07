@@ -93,18 +93,18 @@ console.log(newArr(arrE));
 //Task 9: Find Pair With Target Sum
 //target = 9 Output: [2,7]
 const arrF = [2, 7, 11, 15]
-const pair = (target, arr) => {
-    let pairarr = {};
-    for (let num of arr) {
-        const needed = target - num;
-        if (pairarr[needed]) {
-            return [needed, num]
+const finalFesult = (arr, target) => {
+    let seen = {}
+    for(let num of arr){
+        const needed = target - num
+        if(seen[needed]){
+            return[needed, num]
         }
-        pairarr[num] = true;
+        seen[num] = true
     }
-
 }
-console.log(pair(9, arrF));
+console.log(finalFesult(arrF, 9));
+
 
 
 
@@ -115,18 +115,18 @@ const newObj = (arr) => {
     let sum = 0
     let min = Infinity
     let max = -Infinity
-    let evenCount = 0
+    let evenCount = 0;
     let oddCount = 0
     let negativeCount = 0
     for (let num of arr) {
-        sum += num;
+        sum += num
         if (num > max) max = num
         if (num < min) min = num
         if (num % 2 === 0) evenCount++
         else oddCount++
         if (num < 0) negativeCount++
-    }
-    let avg = sum / arr.length
+        }
+    let avg = sum/arr.length
     return { sum, min, max, evenCount, oddCount, negativeCount, avg }
 }
 console.log(newObj(arrG));
@@ -137,18 +137,15 @@ console.log(newObj(arrG));
 //Task 11: Flatten Array
 const numArr = [1, [2, 3], [4, [5, 6]]]
 // console.log(numArr.flat(Infinity));
-const flaternArr = (arr) => {
+const Flatten = (arr) => {
     let result = [];
-    for (let num of arr) {
-        if (Array.isArray(num)) {
-            result = result.concat(flaternArr(num))
-        } else {
+    for(let num of arr){
+        if(Array.isArray(num)){
+            result = result.concat(Flatten(num))
+        }else{
             result.push(num)
         }
     }
     return result
 }
-console.log(flaternArr(numArr));
-
-
-
+console.log("Result : ",Flatten(numArr));
