@@ -20,6 +20,7 @@ const numA = (val) => {
         } else if (i % 5 === 0) {
             result.push("Buzz");
         } else {
+
             result.push(i);
         }
     }
@@ -161,3 +162,21 @@ for (var i = 0; i < 5; i++) {
 
 console.log(5 > 3 > 1);
 //Result Error
+
+
+
+const arrG = [5, 3, 7, 5, 9, 4, 1, 2, 5, -8, 49]
+
+//if no any negative number return true else false
+
+const newArr = (val) => {
+  for(let i=0; i<=val.length;i++) {
+    console.log(val[i])
+    if(val[i]<0){
+      return false
+    }
+  }
+  return true
+  
+}
+console.log(newArr(arrG))
