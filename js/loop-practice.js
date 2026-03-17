@@ -21,7 +21,7 @@ for (let i = 20; i > 0; i--) {
 }
 //calculate the sum of 1-100
 var sum = 0;
-for (let i = 1; i < 100; i++) {
+for (let i = 0; i < 100; i++) {
     sum = sum + i
 }
 console.log(sum);
