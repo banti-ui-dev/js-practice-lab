@@ -66,10 +66,10 @@ console.log(sumofNum);
 //Find first repeating character (e.g., "success" → "c")
 const firstRepeat = (str) => {
   let frequency = {};
-  for(let char of str){
-    if(frequency[char]){
+  for (let char of str) {
+    if (frequency[char]) {
       return char
-    }else{
+    } else {
       frequency[char] = 1
     }
   }
@@ -77,12 +77,30 @@ const firstRepeat = (str) => {
 console.log(firstRepeat("success"));
 
 //Find the minimum number in given array
-const inputarr = [8,3,12,1,6]
+const inputarr = [8, 3, 12, 1, 6]
 const minNum = (arr) => {
   let minVal = Infinity;
-  for(let num of arr){
-    if(num < minVal) minVal = num
+  for (let num of arr) {
+    if (num < minVal) minVal = num
   }
   return minVal
 }
 console.log(minNum(inputarr))
+
+
+
+const data = "Welcome to Javascript Interview!";
+//Result : emocleW ot tpircsavaJ !weivretnI
+const reverseStr = (str) => {
+  let strArr = str.split(" ")
+  const words = strArr.map((item) => {
+    newItem = item.split("");
+    let reverse = []
+    for (let i = newItem.length - 1; i >= 0; i--) {
+      reverse.push(newItem[i])
+    }
+    return reverse.join("")
+  })
+  return words
+}
+console.log(reverseStr(data))

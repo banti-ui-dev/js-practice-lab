@@ -31,11 +31,11 @@ description()
 
 ////////////////////////////////////////////////////////////
 
-foo();
+// foo();// Result foo is not a function
 var foo = function () {
     console.log("Hello");
 };
-// Result foo is not a function
+foo(); // Result Hello
 
 ////////////////////////////////////////////////////////////
 
